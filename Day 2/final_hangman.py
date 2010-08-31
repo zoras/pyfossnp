@@ -10,7 +10,9 @@ def generate_word():
                   'leg': 'a body part', 
                   'basketball': 'name of a sports', 
                   'laptop' : 'type of technology' , 
-                  'nepal':'name of a country'
+                  'nepal':'name of a country',
+                  'abhinav': 'my name',
+                  'yipl': 'organization'
                 }
                 
     words = word_dict.keys()
@@ -47,12 +49,16 @@ while chance != 6 :
         break
 
     guess = raw_input('guess a letter: ')
+    if len(guess)>1:
+        print 'please enter a correctly'
+        break
+    
     guesses += guess
     
     if guess not in secret[0]:
         chance += 1
-        print 'Nope.'
-        print chance, 'more chance'
+        #print 'Nope.'
+        #print chance, 'more chance'
         if chance >= 1: print '   O   '
         if chance >= 2: print ' \_|_/ '
         if chance >= 3: print '   |   '
